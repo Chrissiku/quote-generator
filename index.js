@@ -18,5 +18,10 @@ const generateQuote = () => {
     });
 };
 
+copy.addEventListener("click", () => {
+  navigator.clipboard.writeText(text.innerText);
+  alert("Text copied successfully");
+});
+
 generateQuote();
 button.addEventListener("click", generateQuote);
