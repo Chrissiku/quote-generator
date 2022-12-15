@@ -5,9 +5,141 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  list-style: none;
 }
 
 :root {
-  --primary-color: #052360;
-  --secondary-color: #ffa65d;
+  --primary-color: #0b1f47;
+  --secondary-color: #fff;
+  --extra-color: #ff8f33;
+}
+
+header,
+.content :where(i, p, span) {
+  color: var(--primary-color);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.wrapper {
+  width: 600px;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  padding: 30px 30px 25px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper header {
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.wrapper .content {
+  margin: 35px 0;
+}
+
+.wrapper .content .quote-area {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper .content .quote-area i {
+  font-size: 15px;
+  color: var(--extra-color);
+}
+
+.wrapper .content .quote-area i:first-child {
+  margin: 3px 10px 0 0;
+}
+
+.wrapper .content .quote-area i:last-child {
+  display: flex;
+  margin: 0 0 3px 10px;
+  align-items: flex-end;
+}
+
+.wrapper .content .quote-area .quote {
+  font-size: 20px;
+  text-align: center;
+  word-break: break-all;
+}
+
+.wrapper .content .author {
+  display: flex;
+  font-size: 16px;
+  margin-top: 20px;
+  font-style: italic;
+  justify-content: center;
+}
+
+.wrapper .content .author span:first-child {
+  margin: -4px 5px 0 0;
+  font-family: monospace;
+}
+
+.wrapper .buttons {
+  border-top: 1px solid #ccc;
+}
+
+.wrapper .buttons .features {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper .buttons .features ul {
+  display: flex;
+}
+
+.wrapper .buttons .features ul li {
+  margin: 0 5px;
+  height: 47px;
+  width: 47px;
+  display: flex;
+  cursor: pointer;
+  color: var(--extra-color);
+  list-style: none;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--extra-color);
+  transition: all 0.3s ease;
+}
+
+.wrapper .buttons .features ul li:first-child {
+  margin-left: 0;
+}
+
+ul li:is(:hover, .active) {
+  background: var(--extra-color);
+}
+ul li:is(:hover, .active) > i {
+  color: var(--primary-color);
+}
+
+ul .speech.active {
+  pointer-events: none;
+}
+
+.buttons button {
+  border: none;
+  color: var(--primary-color);
+  outline: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 13px 22px;
+  border-radius: 30px;
+  background: var(--extra-color);
+}
+.buttons button.loading {
+  opacity: 0.7;
+  pointer-events: none;
 }
