@@ -117,14 +117,15 @@ body {
   margin-left: 0;
 }
 
-ul li:is(:hover, .active) {
+.wrapper .buttons .features ul li:is(:hover, .active) {
   background: var(--extra-color);
 }
-ul li:is(:hover, .active) > i {
+
+.wrapper .buttons .features ul li:is(:hover, .active) > i {
   color: var(--primary-color);
 }
 
-ul .speech.active {
+.wrapper .buttons .features ul .speech.active {
   pointer-events: none;
 }
 
