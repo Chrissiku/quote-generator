@@ -139,6 +139,7 @@ ul .speech.active {
   border-radius: 30px;
   background: var(--extra-color);
 }
+
 .buttons button.loading {
   opacity: 0.7;
   pointer-events: none;
