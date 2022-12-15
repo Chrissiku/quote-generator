@@ -23,5 +23,10 @@ copy.addEventListener("click", () => {
   alert("Text copied successfully");
 });
 
+twitter.addEventListener("click", () => {
+  let url = `https://twitter.com/intent/tweet?url=${text.innerText}`;
+  window.open(url, "_blank");
+});
+
 generateQuote();
 button.addEventListener("click", generateQuote);
