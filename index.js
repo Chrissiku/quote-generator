@@ -4,6 +4,7 @@ const author = document.querySelector(".name");
 const voice = document.querySelector(".speech");
 const copy = document.querySelector(".copy");
 const twitter = document.querySelector(".twitter");
+const synthesis = speechSynthesis;
 
 const generateQuote = () => {
   button.classList.add("loading");
@@ -26,6 +27,22 @@ copy.addEventListener("click", () => {
 twitter.addEventListener("click", () => {
   let url = `https://twitter.com/intent/tweet?url=${text.innerText}`;
   window.open(url, "_blank");
+});
+
+voice.addEventListener("click", () => {
+  if (!text.classList.contains("loading")) {
+    let voices = window.speechSynthesis.getVoices();
+    let enunciation = new SpeechSynthesisUtterance(
+      `${text.innerText} by ${author.innerText}`
+    );
+    enunciation.voice = voices[6];
+    synthesis.speak(enunciation);
+    setInterval(() => {
+      !synthesis.speaking
+        ? voice.classList.remove("active")
+        : voice.classList.add("active");
+    }, 10);
+  }
 });
 
 generateQuote();
