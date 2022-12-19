@@ -1,5 +1,5 @@
 # Quotes generator
-> This project is a javascript app that consumes an API for generating randon quote
+> This project is a javascript app that consumes an API for generating randon quote. With these project you can share on twitter, copy text and listen the quote.
 
 
 ## Live Link
